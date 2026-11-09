@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d1b">
+<title>TECH WITH SHERA | Reels Link Hub</title>
+<style>
+:root{--bg:#090d1b;--panel:#111a30;--muted:#aab5cc;--white:#f7f9ff;--blue:#3978ff;--pink:#e94ba8;--line:#263451}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#172c58 0,transparent 36%),radial-gradient(circle at 100% 10%,#431b50 0,transparent 30%),var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+header{padding:22px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
+.logo{font-weight:900;letter-spacing:1px;font-size:20px}.logo span{color:#70a0ff}
+.badge{font-size:12px;color:#c6d3ed;border:1px solid #ffffff25;border-radius:30px;padding:8px 12px}
+main{width:min(760px,92%);margin:65px auto 40px;text-align:center;flex:1}
+.tag{display:inline-block;color:#a9c4ff;background:#24417a55;border:1px solid #4776c9;border-radius:30px;padding:8px 14px;font-size:12px;font-weight:bold;letter-spacing:1px}
+h1{font-size:clamp(34px,7vw,58px);line-height:1.08;margin:22px 0 14px}h1 span{background:linear-gradient(90deg,#67a2ff,#f16ac1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 30px}
+.card{background:linear-gradient(145deg,#15213b,#10172a);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 22px 65px #0005;text-align:left}
+.platforms{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.platform{padding:14px;border:1px solid var(--line);border-radius:13px;background:#0c1427;color:white;font-weight:bold;display:flex;align-items:center;gap:10px}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}.fb{background:#3984ff}.ig{background:linear-gradient(45deg,#ffb13d,#f04a9b,#8654ff)}
+label{display:block;font-size:13px;color:#d9e2f5;margin:18px 0 9px}
+.inputrow{display:flex;gap:10px}
+input{width:100%;min-width:0;background:#080f20;border:1px solid #344361;border-radius:12px;padding:16px;color:white;font-size:15px;outline:none}
+input:focus{border-color:#6c9cff;box-shadow:0 0 0 3px #3978ff22}
+button{border:0;border-radius:12px;padding:0 20px;background:linear-gradient(100deg,var(--blue),#7659ef);color:white;font-weight:bold;font-size:14px;cursor:pointer;white-space:nowrap}
+button:hover{filter:brightness(1.12)}
+#message{font-size:13px;line-height:1.6;color:#c6d3ed;margin-top:14px;min-height:22px}
+.note{margin:18px 2px 0;color:#8795b2;font-size:12px;line-height:1.6}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.feature{background:#111a30aa;border:1px solid #263451;border-radius:14px;padding:16px 10px;font-size:13px;color:#dce5f7}
+.feature b{display:block;font-size:20px;margin-bottom:7px}
+footer{text-align:center;padding:22px;color:#8190ad;font-size:12px;border-top:1px solid #ffffff12}
+@media(max-width:520px){main{margin-top:42px}.card{padding:17px}.inputrow{flex-direction:column}.inputrow button{padding:15px}.features{grid-template-columns:1fr}.platforms{gap:8px}.platform{font-size:13px;padding:12px}}
+</style>
+</head>
+<body>
+<header><div class="logo">TECH <span>WITH SHERA</span></div><div class="badge">REELS LINK TOOL</div></header>
+<main>
+  <div class="tag">FAST • SIMPLE • MOBILE FRIENDLY</div>
+  <h1>Reels Link <span>Center</span></h1>
+  <p class="sub">Facebook aur Instagram video links ko ek hi jagah manage karein. Apna link paste karke platform check karein.</p>
+  <section class="card">
+    <div class="platforms"><div class="platform"><i class="dot fb"></i> Facebook Reels</div><div class="platform"><i class="dot ig"></i> Instagram Reels</div></div>
+    <label for="videoLink">Video ka link paste karein</label>
+    <div class="inputrow">
+      <input id="videoLink" type="url" placeholder="https://www.instagram.com/reel/...">
+      <button onclick="checkLink()">CHECK LINK</button>
+    </div>
+    <div id="message" aria-live="polite">Link check karne ke liye upar paste karein.</div>
+    <p class="note">Note: Yeh starter website link ko pehchanti hai. Actual download ke liye authorized backend/API connect karna hoga. Sirf apne ya permission wale videos download karein; private content ya platform restrictions ko bypass na karein.</p>
+  </section>
+  <div class="features">
+    <div class="feature"><b>📱</b>Mobile Friendly</div>
+    <div class="feature"><b>⚡</b>Simple Interface</div>
+    <div class="feature"><b>🔗</b>FB + Instagram</div>
+  </div>
+</main>
+<footer>© 2026 TECH WITH SHERA • Made for creators</footer>
+<script>
+function checkLink(){
+ const field=document.getElementById('videoLink'), msg=document.getElementById('message');
+ let value=field.value.trim();
+ if(!value){msg.textContent='Pehle Facebook ya Instagram ka link paste karein.';return;}
+ let u;
+ try{u=new URL(value)}catch(e){msg.textContent='Sahi URL paste karein, jaise https://www.instagram.com/reel/...';return;}
+ const host=u.hostname.toLowerCase().replace(/^www\\./,'');
+ if(host==='instagram.com'||host.endsWith('.instagram.com')){
+   msg.textContent='Instagram link pehchan liya gaya. Actual download ke liye authorized backend/API connect karna baaki hai.';
+ }else if(host==='facebook.com'||host.endsWith('.facebook.com')||host==='fb.watch'){
+   msg.textContent='Facebook link pehchan liya gaya. Actual download ke liye authorized backend/API connect karna baaki hai.';
+ }else{
+   msg.textContent='Yeh Facebook ya Instagram link nahi lag raha. Sahi link paste karein.';
+ }
+}
+</script>
+</body>
+</html>
